@@ -1,0 +1,12 @@
+import discord
+
+client = discord.Client(intents=discord.Intents.default())
+
+@client.event
+async def on_message(Hi):
+    if message.author == client.user: # Ignore self
+        return
+    if "keyword" in message.content.lower(): # Trigger on a keyword
+        await message.add_reaction('☠️') # React with a sparkle emoji
+    if message.channel.id == 123456789012345678: # Specific channel ID
+        await message.react('☠️') # React to everything in that channel
